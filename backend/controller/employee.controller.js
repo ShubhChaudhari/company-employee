@@ -18,34 +18,6 @@ export const getEmployees = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-// export const getEmployees = async (req, res) => {
-//   try {
-//     const employees = await Employee.find().populate('companyId');
-//     console.log('employees', employees)
-    
-//     const secondHighestSalaries = {};
-
-//     employees.forEach((employee) => {
-//       const key = `${employee.companyId.name}-${employee.name}`;
-//       if (!secondHighestSalaries[key]) {
-//         secondHighestSalaries[key] = { max: -Infinity, secondMax: -Infinity };
-//       }
-      
-//       const salary = employee.salary;
-
-//       if (salary > secondHighestSalaries[key].max) {
-//         secondHighestSalaries[key].secondMax = secondHighestSalaries[key].max;
-//         secondHighestSalaries[key].max = salary;
-//       } else if (salary > secondHighestSalaries[key].secondMax && salary < secondHighestSalaries[key].max) {
-//         secondHighestSalaries[key].secondMax = salary;
-//       }
-//     });
-
-//     res.json({ secondHighestSalaries });
-//   } catch (error) {
-//     res.status(500).json({ error: error.message });
-//   }
-// };
 
 
 export const getEmployeeById = async (req, res) => {
